@@ -7,7 +7,7 @@ import { Twitter, Facebook, Instagram, X } from "lucide-react";
 const Footer = () => {
   return (
     <footer className="relative bg-black text-white">
-      <div className="relative z-10 container mx-auto px-6 pt-20 pb-10">
+      <div className="relative z-10 templateContainer px-6 pt-20 pb-10">
         {/* --- Middle Section --- */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
           {/* Brand Column */}

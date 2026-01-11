@@ -107,11 +107,11 @@
 
 import Link from "next/link";
 import React from "react";
+import FlowButton from "./FlowButton";
 
 const Hero: React.FC = () => {
   return (
     <div className="relative flex min-h-screen w-full bg-[#1a1a1a] bg-cover object-cover bg-center  sm:bg-[url('/image/37122bff-89cb-4568-b1df-a69d696d4b51.webp')]  bg-[url('/image/37122bff-89cb-4568-b1df-a69d696d4b51.webp')]">
-      {/* <div className="absolute inset-0 bg-black opacity-30 z-0"></div> */}
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent"></div>
       <div className="relative z-10 flex items-center w-full templateContainer">
         <div className="lg:w-1/2 flex items-center justify-start">
@@ -138,19 +138,7 @@ const Hero: React.FC = () => {
                 Bulk Order Online
               </p>
 
-              {/* <div>
-                <Link href="#contact">
-                  <button className="mt-4 cursor-pointer lg:mt-8 px-8 py-3 text-sm font-semibold uppercase tracking-widest border border-white hover:bg-white hover:text-black transition duration-300">
-                    ORDER NOW
-                  </button>
-                </Link>
-                <Link href="#contact">
-                  <button className="mt-4 cursor-pointer lg:mt-8 px-8 py-3 text-sm font-semibold uppercase tracking-widest border border-white hover:bg-white hover:text-black transition duration-300">
-                    LEARN MORE
-                  </button>
-                </Link>
-              </div> */}
-              <div className="flex flex-row gap-1 md:gap-4">
+              {/* <div className="flex flex-row gap-1 md:gap-4">
                 <Link href="#contact">
                   <button className="mt-4 bg-[#fe6035] cursor-pointer rounded-xs lg:mt-8 px-8 py-3 text-sm font-semibold uppercase tracking-widest  hover:text-black transition duration-300">
                     ORDER NOW
@@ -162,6 +150,10 @@ const Hero: React.FC = () => {
                     LEARN MORE
                   </button>
                 </Link>
+              </div> */}
+              <div className="flex gap-4 pt-4">
+                <FlowButton text="Order Now" href="#contact" />
+                <FlowButton text="Learn More" href="#contact" />
               </div>
             </div>
           </div>

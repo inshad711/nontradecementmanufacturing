@@ -1,11 +1,17 @@
 // "use client";
 
-// import React, { useState } from "react";
+// import React, { useState, useEffect, useRef } from "react";
 // import Link from "next/link";
 // import { Menu, X, Truck } from "lucide-react";
 
 // const Header = () => {
 //   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+//   // 🔑 Header control states
+//   const [showHeader, setShowHeader] = useState(true);
+//   const [scrolled, setScrolled] = useState(false);
+
+//   const lastScrollY = useRef(0);
 
 //   const navLinks = [
 //     { name: "Home", href: "#" },
@@ -14,55 +20,125 @@
 //     { name: "Contact", href: "#" },
 //   ];
 
-//   return (
-//     <header className="w-full absolute top-0 z-50 bg-transparent">
-//       <div className=" max-w-[1400px] mx-auto px-4 md:px-12 lg:px-14">
-//         <div className="flex justify-between items-center h-20">
-//           <div className="flex-shrink-0 flex items-center gap-3 cursor-pointer">
-//             <div className="relative">
-//               <Truck
-//                 size={40}
-//                 strokeWidth={1.5}
-//                 className="text-white transform -scale-x-100"
-//               />
-//             </div>
+//   /* ---------------------------------------
+//      SCROLL HANDLING (DESKTOP + MOBILE)
+//   ---------------------------------------- */
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       if (isMobileMenuOpen) return; // ⛔ stop scroll logic when menu open
 
-//             {/* Text Stack */}
+//       const currentScroll = window.scrollY;
+
+//       setScrolled(currentScroll > 50);
+
+//       // Scroll down → hide
+//       if (currentScroll > lastScrollY.current && currentScroll > 80) {
+//         setShowHeader(false);
+//       }
+
+//       // Scroll up → show
+//       if (currentScroll < lastScrollY.current) {
+//         setShowHeader(true);
+//       }
+
+//       lastScrollY.current = currentScroll;
+//     };
+
+//     window.addEventListener("scroll", handleScroll);
+//     return () => window.removeEventListener("scroll", handleScroll);
+//   }, [isMobileMenuOpen]);
+
+//   /* ---------------------------------------
+//      FORCE HEADER VISIBLE WHEN MENU OPENS
+//   ---------------------------------------- */
+//   useEffect(() => {
+//     if (isMobileMenuOpen) {
+//       setShowHeader(true);
+//       document.body.style.overflow = "hidden";
+//     } else {
+//       document.body.style.overflow = "";
+//     }
+
+//     return () => {
+//       document.body.style.overflow = "";
+//     };
+//   }, [isMobileMenuOpen]);
+
+//   return (
+//     <header
+//       className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out
+//         ${
+//           showHeader || isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+//         }
+//         ${scrolled ? "bg-white shadow-md" : "bg-transparent"}
+//       `}
+//     >
+//       <div className="max-w-[1400px] mx-auto px-4 md:px-12 lg:px-14">
+//         <div className="flex justify-between items-center h-20">
+//           {/* Logo */}
+//           <div className="flex items-center gap-3 cursor-pointer">
+//             <Truck
+//               size={40}
+//               strokeWidth={1.5}
+//               className={`-scale-x-100 transition-colors ${
+//                 scrolled ? "text-black" : "text-white"
+//               }`}
+//             />
 //             <div className="flex flex-col leading-none">
-//               <span className="text-xl md:text-2xl font-bold tracking-wide text-white uppercase">
+//               <span
+//                 className={`text-xl md:text-2xl font-bold uppercase transition-colors ${
+//                   scrolled ? "text-black" : "text-white"
+//                 }`}
+//               >
 //                 BULK CEMENT
 //               </span>
-//               <span className="text-xs md:text-sm tracking-[0.35em] text-gray-200 font-medium uppercase mt-0.5">
+//               <span
+//                 className={`text-xs md:text-sm tracking-[0.35em] uppercase mt-0.5 transition-colors ${
+//                   scrolled ? "text-gray-600" : "text-gray-200"
+//                 }`}
+//               >
 //                 ORDER
 //               </span>
 //             </div>
 //           </div>
 
-//           {/* Center/Right: Desktop Navigation */}
+//           {/* Desktop Nav */}
 //           <nav className="hidden md:flex items-center space-x-8">
 //             {navLinks.map((link) => (
 //               <Link
 //                 key={link.name}
 //                 href={link.href}
-//                 className="text-md font-normal text-gray-100 hover:text-white transition-colors duration-200"
+//                 className={`transition-colors ${
+//                   scrolled
+//                     ? "text-gray-800 hover:text-black"
+//                     : "text-gray-100 hover:text-white"
+//                 }`}
 //               >
 //                 {link.name}
 //               </Link>
 //             ))}
 //           </nav>
 
-//           {/* Far Right: CTA Button */}
-//           <div className="hidden md:flex items-center ml-4">
-//             <button className="bg-orange-600 hover:bg-orange-500 text-white text-sm font-medium py-2.5 px-6 rounded shadow-sm transition-colors duration-200">
+//           {/* CTA */}
+//           <div className="hidden md:flex">
+//             <button
+//               className={`px-6 py-2.5 rounded text-sm font-medium transition-colors ${
+//                 scrolled
+//                   ? "bg-black text-white hover:bg-gray-800"
+//                   : "bg-orange-600 text-white hover:bg-orange-500"
+//               }`}
+//             >
 //               Get a Quote
 //             </button>
 //           </div>
 
-//           {/* Mobile Menu Button */}
-//           <div className="md:hidden flex items-center">
+//           {/* Mobile Toggle */}
+//           <div className="md:hidden">
 //             <button
 //               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-//               className="text-gray-200 hover:text-white focus:outline-none"
+//               className={`transition-colors ${
+//                 scrolled ? "text-black" : "text-white"
+//               }`}
 //             >
 //               {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
 //             </button>
@@ -70,24 +146,23 @@
 //         </div>
 //       </div>
 
+//       {/* Mobile Menu */}
 //       {isMobileMenuOpen && (
-//         <div className="md:hidden bg-blue-900 border-t border-blue-700">
-//           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+//         <div className="md:hidden bg-white border-t shadow-lg">
+//           <div className="px-4 pt-4 pb-6 space-y-2">
 //             {navLinks.map((link) => (
 //               <Link
 //                 key={link.name}
 //                 href={link.href}
-//                 className="block px-3 py-2 rounded-md text-base font-medium text-white hover:bg-blue-800"
+//                 className="block px-3 py-2 text-gray-800 font-medium rounded hover:bg-gray-100"
 //                 onClick={() => setIsMobileMenuOpen(false)}
 //               >
 //                 {link.name}
 //               </Link>
 //             ))}
-//             <div className="pt-4 pb-2">
-//               <button className="w-full bg-orange-600 hover:bg-orange-500 text-white font-bold py-3 px-4 rounded">
-//                 Get a Quote
-//               </button>
-//             </div>
+//             <button className="w-full mt-4 bg-black text-white py-3 rounded font-semibold hover:bg-gray-800">
+//               Get a Quote
+//             </button>
 //           </div>
 //         </div>
 //       )}
@@ -102,13 +177,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { Menu, X, Truck } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  // 🔑 Default states (flash-free)
-  const [showHeader, setShowHeader] = useState(false);
-  const [scrolled, setScrolled] = useState(true);
+  const [showHeader, setShowHeader] = useState(true);
+  const [scrolled, setScrolled] = useState(false);
 
   const lastScrollY = useRef(0);
 
@@ -120,36 +194,18 @@ const Header = () => {
   ];
 
   /* ---------------------------------------
-     INITIAL LOAD + SCROLL HANDLING
+     SCROLL HANDLING
   ---------------------------------------- */
   useEffect(() => {
-    const initialScroll = window.scrollY;
-    lastScrollY.current = initialScroll;
-
-    // Initial state on refresh
-    if (initialScroll <= 10) {
-      setShowHeader(true);
-      setScrolled(false);
-    } else {
-      setShowHeader(false);
-      setScrolled(true);
-    }
-
     const handleScroll = () => {
-      if (isMobileMenuOpen) return; // pause scroll logic when menu open
+      if (isMobileMenuOpen) return;
 
       const currentScroll = window.scrollY;
-
-      // Background change
       setScrolled(currentScroll > 50);
 
-      // Scroll DOWN → hide
       if (currentScroll > lastScrollY.current && currentScroll > 80) {
         setShowHeader(false);
-      }
-
-      // Scroll UP → show
-      if (currentScroll < lastScrollY.current) {
+      } else {
         setShowHeader(true);
       }
 
@@ -161,120 +217,142 @@ const Header = () => {
   }, [isMobileMenuOpen]);
 
   /* ---------------------------------------
-     BODY SCROLL LOCK (Mobile Menu)
+     LOCK SCROLL WHEN MENU OPEN
   ---------------------------------------- */
   useEffect(() => {
-    if (isMobileMenuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "";
-    }
-
+    document.body.style.overflow = isMobileMenuOpen ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
   }, [isMobileMenuOpen]);
 
   return (
-    <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ease-in-out ${
-        showHeader ? "translate-y-0" : "-translate-y-full"
-      } ${scrolled ? "bg-white shadow-md" : "bg-transparent"}`}
-    >
-      <div className="max-w-[1400px] mx-auto px-4 md:px-12 lg:px-14">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <div className="flex items-center gap-3 cursor-pointer">
-            <Truck
-              size={40}
-              strokeWidth={1.5}
-              className={`transform -scale-x-100 transition-colors ${
-                scrolled ? "text-black" : "text-white"
-              }`}
-            />
-            <div className="flex flex-col leading-none">
-              <span
-                className={`text-xl md:text-2xl font-bold uppercase transition-colors ${
+    <>
+      <header
+        className={`fixed top-0 w-full z-50 transition-all duration-300
+        ${
+          showHeader || isMobileMenuOpen ? "translate-y-0" : "-translate-y-full"
+        }
+        ${scrolled ? "bg-white shadow-md" : "bg-transparent"}`}
+      >
+        <div className="max-w-[1400px] mx-auto px-4 md:px-12 lg:px-14">
+          <div className="flex justify-between items-center h-20">
+            {/* Logo */}
+            <div className="flex items-center gap-3">
+              <Truck
+                size={40}
+                className={`-scale-x-100 ${
                   scrolled ? "text-black" : "text-white"
                 }`}
-              >
-                BULK CEMENT
-              </span>
-              <span
-                className={`text-xs md:text-sm tracking-[0.35em] uppercase mt-0.5 transition-colors ${
-                  scrolled ? "text-gray-600" : "text-gray-200"
-                }`}
-              >
-                ORDER
-              </span>
+              />
+              <div>
+                <p
+                  className={`font-bold text-xl ${
+                    scrolled ? "text-black" : "text-white"
+                  }`}
+                >
+                  BULK CEMENT
+                </p>
+                <p
+                  className={`text-xs tracking-widest ${
+                    scrolled ? "text-gray-600" : "text-gray-200"
+                  }`}
+                >
+                  ORDER
+                </p>
+              </div>
             </div>
-          </div>
 
-          {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={`transition-colors ${
-                  scrolled
-                    ? "text-gray-800 hover:text-black"
-                    : "text-gray-100 hover:text-white"
+            {/* Desktop Nav */}
+            <nav className="hidden md:flex space-x-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={scrolled ? "text-gray-800" : "text-white"}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+
+            {/* CTA */}
+            <div className="hidden md:block">
+              <button
+                className={`px-6 py-2 rounded ${
+                  scrolled ? "bg-black text-white" : "bg-orange-600 text-white"
                 }`}
               >
-                {link.name}
-              </Link>
-            ))}
-          </nav>
+                Get a Quote
+              </button>
+            </div>
 
-          {/* CTA */}
-          <div className="hidden md:flex">
+            {/* Mobile Toggle */}
             <button
-              className={`px-6 py-2.5 rounded text-sm font-medium transition-colors ${
-                scrolled
-                  ? "bg-black text-white hover:bg-gray-800"
-                  : "bg-orange-600 text-white hover:bg-orange-500"
-              }`}
+              className={`md:hidden ${scrolled ? "text-black" : "text-white"}`}
+              onClick={() => setIsMobileMenuOpen(true)}
             >
-              Get a Quote
-            </button>
-          </div>
-
-          {/* Mobile Button */}
-          <div className="md:hidden">
-            <button
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`transition-colors ${
-                scrolled ? "text-black" : "text-white"
-              }`}
-            >
-              {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+              <Menu size={28} />
             </button>
           </div>
         </div>
-      </div>
+      </header>
 
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t shadow-lg">
-          <div className="px-4 pt-4 pb-6 space-y-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className="block px-3 py-2 text-gray-800 font-medium rounded hover:bg-gray-100"
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <button className="w-full mt-4 bg-black text-white py-3 rounded font-semibold hover:bg-gray-800">
-              Get a Quote
-            </button>
-          </div>
-        </div>
-      )}
-    </header>
+      {/* ---------------------------------------
+         MOBILE MENU (LEFT → RIGHT)
+      ---------------------------------------- */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            {/* Backdrop (Outside Area) */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 0.65 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25 }}
+              className="fixed inset-0 bg-black z-40 backdrop-blur-sm"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+
+            {/* Sliding Menu */}
+            <motion.div
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ type: "spring", stiffness: 260, damping: 26 }}
+              className="fixed top-0 left-0 w-[80%] max-w-sm h-full bg-white z-50 shadow-2xl"
+              onClick={(e) => e.stopPropagation()} // ⛔ prevent closing when clicking inside
+            >
+              {/* Header */}
+              <div className="flex justify-between items-center p-4 border-b">
+                <p className="font-bold text-lg">Menu</p>
+                <button onClick={() => setIsMobileMenuOpen(false)}>
+                  <X size={26} />
+                </button>
+              </div>
+
+              {/* Links */}
+              <nav className="flex flex-col p-4 space-y-4">
+                {navLinks.map((link) => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="text-lg font-medium text-gray-800"
+                  >
+                    {link.name}
+                  </Link>
+                ))}
+
+                <button className="mt-6 bg-black text-white py-3 rounded">
+                  Get a Quote
+                </button>
+              </nav>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
 

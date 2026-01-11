@@ -6,21 +6,31 @@ import OurProduct from "./component/OurProduct";
 import QuoteSection from "./component/QuoteSection";
 import Contact from "./component/Contact";
 import Product from "./component/Product";
+import CardsDesing from "./component/CardsDesing";
+import AboutUsSection from "./component/AboutUsSection";
 
 export default function Home() {
   return (
     <div>
       <Hero />
       <div>
-        <AboutSection />
+        <AboutUsSection />
       </div>
+
+      <div>
+        <CardsDesing />
+      </div>
+
       {/* <div>
         <OurFeature />
       </div> */}
       <div>
         <OurProduct />
       </div>
-      <Product />
+      <div>
+        <AboutSection />
+      </div>
+      {/* <Product /> */}
       <div>
         <QuoteSection />
       </div>

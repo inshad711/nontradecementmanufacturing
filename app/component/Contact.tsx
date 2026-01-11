@@ -13,9 +13,9 @@ import Link from "next/link";
 
 const Contact = () => {
   return (
-    <section className="w-full bg-[#113a7a] text-white py-10 px-4 relative overflow-hidden">
+    <section className="w-full bg-[#000] text-white py-10 px-4 relative overflow-hidden">
       {/* Background Texture/Gradient Overlay (Optional subtle gradient to match depth) */}
-      <div className="absolute inset-0 bg-gradient-to-b from-[#164e9e] to-[#0d2650] opacity-90 pointer-events-none" />
+      {/* <div className="absolute inset-0 bg-gradient-to-b from-[#164e9e] to-[#0d2650] opacity-90 pointer-events-none" /> */}
 
       <div className="relative max-w-7xl mx-auto z-10">
         {/* --- TOP HEADER SECTION --- */}

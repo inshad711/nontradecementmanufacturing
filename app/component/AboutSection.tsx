@@ -94,7 +94,7 @@
 
 import React from "react";
 import { Truck, ShieldCheck, Clock } from "lucide-react";
-import Button from "./Button";
+import Button from "./FlowButton";
 
 const AboutSection = () => {
   return (
@@ -105,9 +105,9 @@ const AboutSection = () => {
         <div className="flex flex-col lg:relative">
           {/* CONTENT → Order 1 on all screens */}
           <div className="relative z-10 max-w-2xl lg:py-0">
-            <h2 className="text-4xl md:text-5xl font-semibold text-blue-900 mb-2">
+            {/* <h2 className="text-4xl md:text-5xl font-semibold text-blue-900 mb-2">
               About Us
-            </h2>
+            </h2> */}
 
             <h3 className="text-xl md:text-2xl font-normal text-gray-700 mb-6">
               Your Trusted Cement Supplier
@@ -126,9 +126,6 @@ const AboutSection = () => {
             </div>
           </div>
 
-          {/* IMAGE */}
-          {/* Desktop: absolute background */}
-          {/* Mobile/Tablet: normal flow (second row) */}
           <div
             className="
               mt-10 lg:mt-0
@@ -144,9 +141,6 @@ const AboutSection = () => {
             />
           </div>
         </div>
-      </div>
-      <div>
-        <Button />
       </div>
     </section>
   );

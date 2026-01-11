@@ -160,52 +160,133 @@
 //   );
 // }
 
+// "use client";
+// import React, { useState } from "react";
+// import Link from "next/link";
+// import { ArrowRight } from "lucide-react";
+
+// export default function App() {
+//   return (
+//     <div className="min-h-screen bg-neutral-200 flex items-center justify-center p-4 font-sans">
+//       <FlowButton />
+//     </div>
+//   );
+// }
+
+// const FlowButton = () => {
+//   const [isHovered, setIsHovered] = useState(false);
+
+//   return (
+//     <Link href="/contact" className="inline-block">
+//       <button
+//         type="button"
+//         className="group relative flex items-center gap-4 overflow-hidden rounded-full bg-white px-2 py-1 pl-6 shadow-md transition-all duration-300 hover:shadow-lg active:scale-95"
+//         onMouseEnter={() => setIsHovered(true)}
+//         onMouseLeave={() => setIsHovered(false)}
+//       >
+//         {/* Black Fill Animation */}
+//         <div
+//           className={`absolute left-0 top-0 bottom-0 z-0 bg-black transition-all duration-500 ease-in-out ${
+//             isHovered ? "w-full" : "w-0"
+//           }`}
+//         />
+
+//         {/* Text */}
+//         <span className="z-10 text-lg font-medium text-orange-500">
+//           Contact Us
+//         </span>
+
+//         {/* Icon */}
+//         <div className="relative z-10 flex p-2 shrink-0 items-center justify-center rounded-full bg-orange-500 text-white transition-transform duration-300 group-hover:scale-105">
+//           <ArrowRight
+//             className={`h-5 w-5 transition-transform duration-300 ease-in-out ${
+//               isHovered ? "rotate-0" : "-rotate-45"
+//             }`}
+//           />
+//         </div>
+//       </button>
+//     </Link>
+//   );
+// };
+
+// "use client";
+
+// import React, { useState } from "react";
+// import Link from "next/link";
+// import { ArrowRight } from "lucide-react";
+
+// interface FlowButtonProps {
+//   text: string;
+//   href: string;
+// }
+
+// const FlowButton: React.FC<FlowButtonProps> = ({ text, href }) => {
+//   const [isHovered, setIsHovered] = useState(false);
+
+//   return (
+//     <Link href={href} className="inline-block">
+//       <button
+//         type="button"
+//         className="group relative flex items-center cursor-pointer gap-4 overflow-hidden rounded-full bg-white px-2 py-1 pl-6 shadow-md transition-all duration-300 hover:shadow-lg active:scale-95"
+//         onMouseEnter={() => setIsHovered(true)}
+//         onMouseLeave={() => setIsHovered(false)}
+//       >
+//         {/* Black fill animation */}
+//         <div
+//           className={`absolute left-0 top-0 bottom-0 z-0 bg-black transition-all duration-500 ease-in-out ${
+//             isHovered ? "w-full" : "w-0"
+//           }`}
+//         />
+
+//         {/* Text */}
+//         <span className="z-10 text-sm font-semibold uppercase tracking-widest text-[#fe6035] group-hover:text-white transition-colors">
+//           {text}
+//         </span>
+
+//         {/* Icon */}
+//         <div className="relative z-10 flex p-2 items-center justify-center rounded-full bg-[#fe6035] text-white transition-transform duration-300 group-hover:scale-105">
+//           <ArrowRight
+//             className={`h-4 w-4 transition-transform duration-300 ${
+//               isHovered ? "rotate-0" : "-rotate-45"
+//             }`}
+//           />
+//         </div>
+//       </button>
+//     </Link>
+//   );
+// };
+
+// export default FlowButton;
+
 "use client";
-"use client";
-import React, { useState } from "react";
+
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-export default function App() {
-  return (
-    <div className="min-h-screen bg-neutral-200 flex items-center justify-center p-4 font-sans">
-      <FlowButton />
-    </div>
-  );
+interface FlowButtonProps {
+  text: string;
+  href: string;
 }
 
-const FlowButton = () => {
-  const [isHovered, setIsHovered] = useState(false);
-
+const FlowButton = ({ text, href }: FlowButtonProps) => {
   return (
-    <Link href="/contact" className="inline-block">
-      <button
-        type="button"
-        className="group relative flex items-center gap-4 overflow-hidden rounded-full bg-white px-2 py-1 pl-6 shadow-md transition-all duration-300 hover:shadow-lg active:scale-95"
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => setIsHovered(false)}
-      >
-        {/* Black Fill Animation */}
-        <div
-          className={`absolute left-0 top-0 bottom-0 z-0 bg-black transition-all duration-500 ease-in-out ${
-            isHovered ? "w-full" : "w-0"
-          }`}
-        />
+    <Link href={href}>
+      <div className="group/button relative flex items-center gap-4 overflow-hidden rounded-full bg-white px-2 py-1 pl-6 shadow-md transition-all duration-300 hover:shadow-lg active:scale-95">
+        {/* Black fill */}
+        <div className="absolute inset-0 z-0 w-0 bg-black transition-all duration-500 group-hover/button:w-full" />
 
         {/* Text */}
-        <span className="z-10 text-lg font-medium text-orange-500">
-          Contact Us
+        <span className="z-10 text-sm font-semibold uppercase tracking-widest text-[#fe6035] transition-colors group-hover/button:text-white">
+          {text}
         </span>
 
         {/* Icon */}
-        <div className="relative z-10 flex p-2 shrink-0 items-center justify-center rounded-full bg-orange-500 text-white transition-transform duration-300 group-hover:scale-105">
-          <ArrowRight
-            className={`h-5 w-5 transition-transform duration-300 ease-in-out ${
-              isHovered ? "rotate-0" : "-rotate-45"
-            }`}
-          />
+        <div className="relative z-10 flex items-center justify-center rounded-full bg-[#fe6035] p-2 text-white transition-transform duration-300 group-hover/button:scale-105">
+          <ArrowRight className="h-4 w-4 -rotate-45 transition-transform duration-300 group-hover/button:rotate-0" />
         </div>
-      </button>
+      </div>
     </Link>
   );
 };
+
+export default FlowButton;
