@@ -13,58 +13,50 @@ interface Product {
 const products: Product[] = [
   {
     id: 1,
-    name: "MPlus Block Fix",
-    image:
-      "https://buildsuvidha.s3.ap-south-1.amazonaws.com/Home+Page/Hot+Deals/MPlus-BlockFix_Bag_img.png",
+    name: "Ambuja Cement",
+    image: "/branded/dfs.png",
     link: "/shop/bs-0004296-mplus-block-fix-345",
   },
   {
     id: 2,
-    name: "MPlus Tile Fix",
-    image:
-      "https://buildsuvidha.s3.ap-south-1.amazonaws.com/Home+Page/Hot+Deals/tile_fix_418.png",
+    name: "Ultra Tech",
+    image: "/branded/dsfdf.jpg",
     link: "/shop/mplus-tile-fix-362",
   },
   {
     id: 3,
-    name: "MPlus Tile Fix (Premium)",
-    image:
-      "https://buildsuvidha.s3.ap-south-1.amazonaws.com/Home+Page/Hot+Deals/tile_fix_408.png",
+    name: "Zuari Cement",
+    image: "/branded/jljwe.jpg",
     link: "/shop/mplus-tile-fix-362",
   },
   {
     id: 4,
-    name: "UltraTech Xtralite Blocks",
-    image:
-      "https://buildsuvidha.s3.ap-south-1.amazonaws.com/Home+Page/Hot+Deals/Xtralite-Block.png",
+    name: "JSW Cement",
+    image: "/branded/sdfdd.jpg",
     link: "/shop/ultratech-xtralite-blocks-81",
   },
   {
     id: 5,
-    name: "Real Rock Blocks",
-    image:
-      "https://buildsuvidha.s3.ap-south-1.amazonaws.com/Home+Page/Hot+Deals/RealRock.png",
+    name: "Dalmia Cement",
+    image: "/branded/sf.jpg",
     link: "/shop/real-rock-blocks-415",
   },
   {
     id: 6,
-    name: "MPlus Ready Plaster",
-    image:
-      "https://buildsuvidha.s3.ap-south-1.amazonaws.com/Home+Page/Hot+Deals/MPlusready_plaster.png",
+    name: "Bharat Cement",
+    image: "/branded/b.jpg",
     link: "/shop/bs-0004549-mplus-ready-plaster-432",
   },
   {
     id: 7,
-    name: "Sri Chakra Cement",
-    image:
-      "https://buildsuvidha.s3.ap-south-1.amazonaws.com/Home+Page/Hot+Deals/Sri-chakra-LOGO.png",
+    name: "Sagar Cement",
+    image: "/branded/wew.jpg",
     link: "/shop/sri-chakra-cement-65",
   },
   {
     id: 8,
-    name: "Dalmia Cement",
-    image:
-      "https://buildsuvidha.s3.ap-south-1.amazonaws.com/Home+Page/Hot+Deals/Dalmia+Cement.png",
+    name: "Peena Cement",
+    image: "/branded/peena.jpg",
     link: "/shop/dalmia-cement-47",
   },
 ];

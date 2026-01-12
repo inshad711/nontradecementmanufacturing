@@ -192,17 +192,17 @@ export default function QuoteSection() {
     e.preventDefault();
 
     const message = `
-🧱 *New Cement Quote Request*
+*New Cement Quote Request*
 
-👤 Name: ${formData.name}
-📧 Email: ${formData.email}
-📞 Phone: ${formData.phone}
-🏗️ Cement Type: ${formData.type}
-⚖️ Quantity: ${formData.quantity} Tons
-📍 Location: ${formData.location}
+Name: ${formData.name}
+Email: ${formData.email}
+Phone: ${formData.phone}
+Cement Type: ${formData.type}
+Quantity: ${formData.quantity} Tons
+Location: ${formData.location}
     `;
 
-    const whatsappURL = `https://wa.me/8604297055?text=${encodeURIComponent(
+    const whatsappURL = `https://wa.me/+918918296631?text=${encodeURIComponent(
       message
     )}`;
 

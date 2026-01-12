@@ -152,7 +152,7 @@ const Hero: React.FC = () => {
                 </Link>
               </div> */}
               <div className="flex gap-4 pt-4">
-                <FlowButton text="Order Now" href="#contact" />
+                {/* <FlowButton text="Order Now" href="#contact" /> */}
                 {/* <FlowButton text="Call Now" href="+919905275236" /> */}
                 <FlowButton text="Call Now" href="tel:+919905275236" />
               </div>

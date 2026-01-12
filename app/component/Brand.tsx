@@ -85,7 +85,7 @@ const BrandCard = ({ brand }: { brand: (typeof BRANDS)[0] }) => {
         className="group block bg-white rounded-xl shadow-sm hover:shadow-md border border-gray-100 p-4 transition-all duration-300 transform hover:-translate-y-1 h-32 flex items-center justify-center relative overflow-hidden"
       >
         {/* Hover Effect Background */}
-        <div className="absolute inset-0 bg-blue-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
         {/* Image / Fallback */}
         <div className="relative z-10 w-full h-full flex items-center justify-center">
@@ -93,7 +93,7 @@ const BrandCard = ({ brand }: { brand: (typeof BRANDS)[0] }) => {
             <img
               src={brand.src}
               alt={`Buy ${brand.name} Online`}
-              className="max-h-full max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+              className="max-h-full max-w-full object-contain  group-hover:grayscale-0 transition-all duration-300"
               onError={() => setImgError(true)}
               loading="lazy"
             />

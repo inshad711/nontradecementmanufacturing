@@ -323,7 +323,7 @@ const Header = () => {
                 Get a Quote
               </button> */}
 
-              <Link href="#quotes">
+              <Link href="tel:+919905275236">
                 <button
                   className={`px-6 py-2 cursor-pointer rounded text-white transition-all duration-300
     hover:scale-105 hover:shadow-lg
@@ -333,7 +333,7 @@ const Header = () => {
         : "bg-gradient-to-r from-orange-500 to-red-600"
     }`}
                 >
-                  Get a Quote
+                  +91 9905275236
                 </button>
               </Link>
             </div>
@@ -417,9 +417,11 @@ const Header = () => {
                   </Link>
                 ))}
 
-                <button className="mt-6 bg-black text-white py-3 rounded">
-                  Get a Quote
-                </button>
+                <Link href="tel:+919905275236">
+                  <button className="mt-6 bg-gradient-to-r from-orange-500 to-red-600 text-white p-3 rounded">
+                    +91 9905275236
+                  </button>
+                </Link>
               </nav>
             </motion.div>
           </>

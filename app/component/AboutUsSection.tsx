@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { Play, Check } from "lucide-react";
+import Link from "next/link";
 
 const AboutUsSection = () => {
   return (
@@ -82,11 +83,11 @@ const AboutUsSection = () => {
                   </div>
                 </div>
 
-                <a href="tel:+919905275236">
+                <Link href="tel:+919905275236">
                   <button className="px-6 py-2 cursor-pointer rounded text-white transition-all duration-300 hover:scale-105 hover:shadow-lg bg-gradient-to-r from-orange-500 to-red-600">
                     Read More
                   </button>
-                </a>
+                </Link>
               </div>
             </div>
           </div>
