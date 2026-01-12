@@ -61,7 +61,7 @@ const OurProduct: React.FC = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section Header */}
-          <div className="text-center mb-12">
+          {/* <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-white mb-2 drop-shadow-md">
               Our Products
             </h2>
@@ -71,6 +71,17 @@ const OurProduct: React.FC = () => {
                 Types of Cement We Offer
               </p>
               <div className="h-[1px] w-12 bg-blue-200/50 hidden sm:block"></div>
+            </div>
+          </div> */}
+          <div className="text-center max-w-7xl mx-auto">
+            <div className="mb-8 md:mb-12">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-gray-900 mb-3">
+                Our <span>Products</span>
+              </h2>
+              <p className="text-blue-100 text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+                We supply a full range of high-quality bulk cement tailored to
+                meet your specific construction needs.
+              </p>
             </div>
           </div>
 
@@ -99,15 +110,18 @@ const OurProduct: React.FC = () => {
                     {product.title}
                   </h3>
 
-                  <p className="text-sm text-gray-600 font-medium mb-6 flex-grow">
+                  <p className="font-medium mb-6 flex-grow  text-sm md:text-base  text-zinc-600">
                     {product.description}
                   </p>
 
                   {/* Button */}
-                  <button className="w-full bg-[#e66e1e] hover:bg-[#d56015] text-white font-semibold py-2 px-4 rounded shadow-md transition-colors duration-200 flex items-center justify-center gap-2 group-hover:shadow-lg">
+                  <button className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:bg-[#d56015] text-white font-semibold py-2 px-4 rounded shadow-md transition-colors duration-200 flex items-center justify-center gap-2 group-hover:shadow-lg">
                     Learn More
                     <ArrowRight className="w-4 h-4" />
                   </button>
+                  {/* <button className="px-6 py-2 rounded text-white transition-all duration-300 hover:scale-105 hover:shadow-lg bg-gradient-to-r from-orange-500 to-red-600">
+                    Read More
+                  </button> */}
                 </div>
               </div>
             ))}

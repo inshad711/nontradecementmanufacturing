@@ -117,11 +117,11 @@ const Hero: React.FC = () => {
         <div className="lg:w-1/2 flex items-center justify-start">
           <div className="max-w-xl text-white relative">
             <div className="relative z-10 space-y-5 pt-0 lg:pt-16">
-              <h3 className="text-sm font-semibold uppercase tracking-widest border-l-2 border-[#8B7C6E] pl-4 text-[#fce9f6]">
+              <h3 className="text-sm font-semibold uppercase tracking-widest border-l-2 border-orange-500 pl-4 text-[#fce9f6]">
                 BULK CEMENT
               </h3>
 
-              <h2 className="text-2xl semibold md:text-4xl lg:text-5xl font-light leading-tight">
+              <h2 className="text-2xl semibold md:text-4xl lg:text-5xl font-semibold leading-tight">
                 Bulk Cement Supplies
                 <br />{" "}
                 <span className="font-medium">

@@ -278,10 +278,21 @@ const Header = () => {
 
             {/* CTA */}
             <div className="hidden md:block">
-              <button
+              {/* <button
                 className={`px-6 py-2 rounded ${
                   scrolled ? "bg-black text-white" : "bg-orange-600 text-white"
                 }`}
+              >
+                Get a Quote
+              </button> */}
+              <button
+                className={`px-6 py-2 rounded text-white transition-all duration-300
+    hover:scale-105 hover:shadow-lg
+    ${
+      scrolled
+        ? "bg-gradient-to-r from-black to-gray-900"
+        : "bg-gradient-to-r from-orange-500 to-red-600"
+    }`}
               >
                 Get a Quote
               </button>

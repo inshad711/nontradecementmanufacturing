@@ -17,15 +17,26 @@ export default function QuoteSection() {
       {/* Main Content */}
       <div className="relative z-10 w-full max-w-5xl mx-auto">
         {/* Header Text */}
-        <div className="text-center mb-8">
+        {/* <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-2 drop-shadow-md">
             Get a Free Quote
           </h2>
           <p className="text-white text-lg font-medium drop-shadow-md">
             Order Bulk Cement Online
           </p>
-        </div>
+        </div> */}
 
+        <div className="text-center max-w-7xl mx-auto">
+          <div className="mb-8 md:mb-12">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white mb-3">
+              Get a <span>Free Quote</span>
+            </h2>
+            <p className="text-white text-base md:text-lg max-w-2xl mx-auto leading-relaxed">
+              Order Bulk Cement Online Order Bulk Cement Online Order Bulk
+              Cement Online
+            </p>
+          </div>
+        </div>
         {/* Form Card */}
         <div className="bg-white rounded-lg shadow-2xl p-6 md:p-10">
           <form className="space-y-6">

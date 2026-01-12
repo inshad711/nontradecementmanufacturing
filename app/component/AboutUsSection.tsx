@@ -12,13 +12,15 @@ const AboutUsSection = () => {
             <div className="max-w-xl">
               {/* Section Title */}
               <div className="mb-6">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 flex items-center gap-2">
+                {/* <h2 className="text-4xl md:text-5xl font-bold text-gray-900 flex items-center gap-2"> */}
+                <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 flex items-center gap-2 text-pretty leading-tight ">
                   About Us
                 </h2>
               </div>
 
               {/* Description Paragraph */}
-              <div className="mb-8 text-gray-600 leading-relaxed text-lg">
+              {/* <div className="mb-8 text-gray-600 leading-relaxed text-lg  text-sm md:text-base  text-zinc-600 "> */}
+              <div className="mb-8   text-sm md:text-base  text-zinc-600 ">
                 <p>
                   Our commitment is to deliver{" "}
                   <a
@@ -43,7 +45,7 @@ const AboutUsSection = () => {
                 ].map((item, index) => (
                   <li
                     key={index}
-                    className="flex items-center gap-3 text-gray-800 font-medium"
+                    className="flex items-center gap-3 font-medium text-sm md:text-base  text-zinc-600"
                   >
                     <span className="flex-shrink-0 w-5 h-5 rounded-full bg-orange-500 flex items-center justify-center">
                       <Check className="w-3 h-3 text-white" strokeWidth={3} />
@@ -59,7 +61,7 @@ const AboutUsSection = () => {
                   </span>
                 </div>
                 <div className="h-12 w-[2px] bg-gray-200 hidden sm:block"></div>
-                <h3 className="text-xl md:text-2xl font-bold text-gray-800 leading-tight">
+                <h3 className="text-xl md:text-2xl font-semibold text-gray-800 leading-tight">
                   Years Of <br /> Experience
                 </h3>
               </div>
@@ -68,7 +70,7 @@ const AboutUsSection = () => {
               <div className="flex flex-wrap items-center gap-8 pt-8 border-t border-gray-100">
                 <div className="flex items-center gap-4">
                   <div>
-                    <h4 className="text-lg font-bold text-gray-900 leading-none">
+                    <h4 className="text-lg font-semibold text-gray-900 leading-none">
                       Sundar Pankow
                     </h4>
                     <span className="text-orange-500 text-sm font-semibold uppercase tracking-wider">
@@ -78,16 +80,19 @@ const AboutUsSection = () => {
                 </div>
 
                 {/* Theme Button Styled precisely like the HTML snippet */}
-                <div className="flex-grow sm:flex-grow-0">
+                {/* <div className="flex-grow sm:flex-grow-0">
                   <a
                     href="#"
                     className="relative inline-block px-10 py-4 bg-orange-600 text-white font-bold uppercase tracking-widest text-sm rounded-sm group overflow-hidden transition-all duration-300"
                   >
                     <span className="relative z-10">Read More</span>
-                    {/* These represent the spans in your original HTML for the hover animation effects */}
+
                     <span className="absolute top-0 left-0 w-0 h-full bg-black/10 transition-all duration-300 group-hover:w-full"></span>
                   </a>
-                </div>
+                </div> */}
+                <button className="px-6 py-2 rounded text-white transition-all duration-300 hover:scale-105 hover:shadow-lg bg-gradient-to-r from-orange-500 to-red-600">
+                  Read More
+                </button>
               </div>
             </div>
           </div>

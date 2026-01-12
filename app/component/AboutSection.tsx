@@ -109,14 +109,14 @@ const AboutSection = () => {
               About Us
             </h2> */}
 
-            <h3 className="text-xl md:text-2xl font-normal text-gray-700 mb-6">
+            <h3 className="text-xl md:text-2xl font-normal text-orange-500 mb-6">
               Your Trusted Cement Supplier
             </h3>
 
             {/* Divider */}
-            <div className="w-24 h-1 bg-blue-900 mb-6 rounded-full"></div>
+            <div className="w-24 h-1 bg-black mb-6 rounded-full"></div>
 
-            <div className="text-gray-800 text-lg leading-relaxed space-y-4 max-w-xl font-medium">
+            <div className=" leading-relaxed space-y-4 max-w-xl font-medium text-sm md:text-base  text-zinc-600">
               <p>
                 We specialize in supplying bulk non-trade cement directly from
                 top manufacturers to your construction site. By eliminating

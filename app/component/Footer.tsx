@@ -26,7 +26,7 @@ const Footer = () => {
               </div>
             </Link>
 
-            <p className="text-sm leading-relaxed text-white/70 max-w-xs">
+            <p className="leading-relaxed text-white/70 max-w-xs text-sm md:text-base">
               Bulk Cement is a diversified global manufacturing company that
               brings technology and engineering together.
             </p>
@@ -46,7 +46,6 @@ const Footer = () => {
                 ["Invest", "/invest"],
                 ["Products", "/products"],
                 ["Media", "/media"],
-                ["Careers", "/careers"],
               ].map(([label, link]) => (
                 <li key={label}>
                   <Link
@@ -62,12 +61,12 @@ const Footer = () => {
 
           {/* Subscribe */}
           <div>
-            <h4 className="text-lg font-bold mb-6 relative inline-block">
+            <h4 className="text-lg font-bold mb-6  relative inline-block">
               Subscribe Now
               <span className="absolute -bottom-2 left-0 w-10 h-0.5 bg-white/30"></span>
             </h4>
 
-            <form className="flex w-full">
+            <form className="flex  w-full">
               <input
                 type="email"
                 placeholder="Enter Your E-mail"
@@ -75,7 +74,7 @@ const Footer = () => {
               />
               <button
                 type="submit"
-                className="bg-[#ffb459] hover:bg-[#ffa030] text-black font-bold px-6 py-3 uppercase text-sm tracking-wider"
+                className="bg-orange-500 cursor-pointer hover:bg-[#ffa030] text-black font-bold px-6 py-3 uppercase text-sm tracking-wider"
               >
                 Send
               </button>
@@ -84,7 +83,7 @@ const Footer = () => {
         </div>
 
         {/* --- Bottom Section --- */}
-        <div className="mt-20 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="md:mt-16 pt-8 border-t border-white/20 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="text-sm text-white/60">
             <span className="text-white font-medium">Bulk Cement</span> © 2026.
             <Link

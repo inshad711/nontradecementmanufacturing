@@ -271,7 +271,7 @@ interface FlowButtonProps {
 const FlowButton = ({ text, href }: FlowButtonProps) => {
   return (
     <Link href={href}>
-      <div className="group/button relative flex items-center gap-4 overflow-hidden rounded-full bg-white px-2 py-1 pl-6 shadow-md transition-all duration-300 hover:shadow-lg active:scale-95">
+      <div className="group/button relative flex items-center gap-1 md:gap-4 overflow-hidden rounded-full bg-white  py-1 px-3 md:pl-6 shadow-md transition-all duration-300 hover:shadow-lg active:scale-95">
         {/* Black fill */}
         <div className="absolute inset-0 z-0 w-0 bg-black transition-all duration-500 group-hover/button:w-full" />
 
