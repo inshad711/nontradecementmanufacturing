@@ -38,7 +38,7 @@ const images = [
     row: "row-span-2",
   },
   {
-    src: "/project/3d-rendering-house-model.webp",
+    src: "/image/sgag.jpg",
     col: "col-span-3",
     row: "row-span-2",
   },
@@ -46,7 +46,7 @@ const images = [
 
 export default function Editorial() {
   return (
-    <section className="w-full">
+    <section id="project" className="w-full">
       <div className="templateContainer">
         {/* Heading */}
 

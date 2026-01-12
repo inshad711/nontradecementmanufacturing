@@ -9,6 +9,8 @@ import Product from "./component/Product";
 import CardsDesing from "./component/CardsDesing";
 import AboutUsSection from "./component/AboutUsSection";
 import Editorial from "./component/Editorial";
+import Brand from "./component/Brand";
+import ProductNew from "./component/ProductNew";
 
 export default function Home() {
   return (
@@ -17,7 +19,8 @@ export default function Home() {
       <div>
         <AboutUsSection />
       </div>
-
+      <ProductNew />
+      <Brand />
       <div>
         <CardsDesing />
       </div>
@@ -31,9 +34,9 @@ export default function Home() {
       {/* <div>
         <OurFeature />
       </div> */}
-      <div>
+      {/* <div>
         <OurProduct />
-      </div>
+      </div> */}
 
       {/* <Product /> */}
       <div>

@@ -331,8 +331,8 @@ const PRODUCTS_DATA = [
 
 export default function CardsDesign() {
   return (
-    <div className="bg-gray-100">
-      <div className="templateContainer py-12">
+    <div id="product" className="bg-gray-100">
+      <div className="templateContainer">
         <div className="flex flex-col items-center justify-center">
           {/* Header */}
           <div className="text-center max-w-7xl mx-auto">
@@ -369,7 +369,7 @@ export default function CardsDesign() {
 
                   {/* Button – Bottom Right */}
                   <div className="absolute bottom-4 right-4 opacity-0 translate-y-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-                    <FlowButton text="Order Now" href={product.href} />
+                    <FlowButton text="Order Now" href="tel:+919905275236" />
                   </div>
                 </div>
 

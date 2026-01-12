@@ -187,10 +187,11 @@ const Header = () => {
   const lastScrollY = useRef(0);
 
   const navLinks = [
-    { name: "Home", href: "#" },
-    { name: "About Us", href: "#" },
-    { name: "Products", href: "#" },
-    { name: "Contact", href: "#" },
+    { name: "Home", href: "/" },
+    { name: "About Us", href: "#about" },
+    { name: "Products", href: "#product" },
+    { name: "Project", href: "#project" },
+    { name: "Contact", href: "#contact" },
   ];
 
   /* ---------------------------------------
@@ -238,33 +239,36 @@ const Header = () => {
         <div className="max-w-[1400px] mx-auto px-4 md:px-12 lg:px-14">
           <div className="flex justify-between items-center h-20">
             {/* Logo */}
-            <div className="flex items-center gap-3">
-              <Truck
-                size={40}
-                className={`-scale-x-100 ${
-                  scrolled ? "text-black" : "text-white"
-                }`}
-              />
-              <div>
-                <p
-                  className={`font-bold text-xl ${
+            <Link href="/">
+              {" "}
+              <div className="flex items-center gap-3">
+                <Truck
+                  size={40}
+                  className={`-scale-x-100 ${
                     scrolled ? "text-black" : "text-white"
                   }`}
-                >
-                  BULK CEMENT
-                </p>
-                <p
-                  className={`text-xs tracking-widest ${
-                    scrolled ? "text-gray-600" : "text-gray-200"
-                  }`}
-                >
-                  ORDER
-                </p>
+                />
+                <div>
+                  <p
+                    className={`font-bold text-xl ${
+                      scrolled ? "text-black" : "text-white"
+                    }`}
+                  >
+                    NON TRADE
+                  </p>
+                  <p
+                    className={`text-xs tracking-widest ${
+                      scrolled ? "text-gray-600" : "text-gray-200"
+                    }`}
+                  >
+                    Cement SUPPLIER
+                  </p>
+                </div>
               </div>
-            </div>
+            </Link>
 
             {/* Desktop Nav */}
-            <nav className="hidden md:flex space-x-8">
+            {/* <nav className="hidden md:flex space-x-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
@@ -273,6 +277,39 @@ const Header = () => {
                 >
                   {link.name}
                 </Link>
+              ))}
+            </nav> */}
+            {/* Desktop Nav */}
+            <nav className="hidden md:flex space-x-8">
+              {navLinks.map((link) => (
+                <motion.div
+                  key={link.name}
+                  className="relative"
+                  initial="rest"
+                  whileHover="hover"
+                  animate="rest"
+                >
+                  <Link
+                    href={link.href}
+                    className={`font-medium transition-colors ${
+                      scrolled ? "text-gray-800" : "text-white"
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+
+                  {/* Center-out underline */}
+                  <motion.span
+                    variants={{
+                      rest: { scaleX: 0 },
+                      hover: { scaleX: 1 },
+                    }}
+                    transition={{ duration: 0.35, ease: "easeInOut" }}
+                    className={`absolute left-0 -bottom-1 h-[2px] w-full origin-center
+          rounded-full
+          ${scrolled ? "bg-black" : "bg-white"}`}
+                  />
+                </motion.div>
               ))}
             </nav>
 
@@ -285,26 +322,34 @@ const Header = () => {
               >
                 Get a Quote
               </button> */}
-              <button
-                className={`px-6 py-2 cursor-pointer rounded text-white transition-all duration-300
+
+              <Link href="#quotes">
+                <button
+                  className={`px-6 py-2 cursor-pointer rounded text-white transition-all duration-300
     hover:scale-105 hover:shadow-lg
     ${
       scrolled
         ? "bg-gradient-to-r from-black to-gray-900"
         : "bg-gradient-to-r from-orange-500 to-red-600"
     }`}
-              >
-                Get a Quote
-              </button>
+                >
+                  Get a Quote
+                </button>
+              </Link>
             </div>
 
             {/* Mobile Toggle */}
-            <button
-              className={`md:hidden ${scrolled ? "text-black" : "text-white"}`}
-              onClick={() => setIsMobileMenuOpen(true)}
-            >
-              <TextAlignEnd size={28} />
-            </button>
+
+            {!isMobileMenuOpen && (
+              <button
+                className={`md:hidden ${
+                  scrolled ? "text-black" : "text-white"
+                }`}
+                onClick={() => setIsMobileMenuOpen(true)}
+              >
+                <TextAlignEnd size={28} />
+              </button>
+            )}
           </div>
         </div>
       </header>

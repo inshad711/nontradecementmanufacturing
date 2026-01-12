@@ -109,7 +109,7 @@ const AboutSection = () => {
               About Us
             </h2> */}
 
-            <h3 className="text-xl md:text-2xl font-normal text-orange-500 mb-6">
+            <h3 className="text-xl md:text-3xl font-normal  text-orange-500 mb-6">
               Your Trusted Cement Supplier
             </h3>
 

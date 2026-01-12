@@ -2,7 +2,7 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { Twitter, Facebook, Instagram, X } from "lucide-react";
+import { Twitter, Facebook, Instagram, X, Truck } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -12,7 +12,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 items-start">
           {/* Brand Column */}
           <div className="space-y-6">
-            <Link href="/" className="inline-block">
+            {/* <Link href="/" className="inline-block">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 border-2 border-white flex items-center justify-center">
                   <div className="w-4 h-6 border-l-2 border-r-2 border-white"></div>
@@ -24,9 +24,32 @@ const Footer = () => {
                   </p>
                 </div>
               </div>
+            </Link> */}
+            <Link href="/">
+              <div className="flex items-center gap-3">
+                <Truck
+                  size={40}
+                  className={`-scale-x-100 text-white"
+                }`}
+                />
+                <div>
+                  <p
+                    className={`font-bold text-xl text-white"
+                  }`}
+                  >
+                    NON TRADE
+                  </p>
+                  <p
+                    className={`text-xs tracking-widest text-gray-200"
+                  }`}
+                  >
+                    Cement SUPPLIER
+                  </p>
+                </div>
+              </div>
             </Link>
 
-            <p className="leading-relaxed text-white/70 max-w-xs text-sm md:text-base">
+            <p className="leading-relaxed mt-2 text-white/70 max-w-xs text-sm md:text-base">
               Bulk Cement is a diversified global manufacturing company that
               brings technology and engineering together.
             </p>
@@ -42,10 +65,10 @@ const Footer = () => {
             <ul className="grid grid-cols-2 gap-y-3 gap-x-8 text-sm font-medium uppercase tracking-wide text-white/80">
               {[
                 ["Home", "/"],
-                ["About us", "/about"],
-                ["Invest", "/invest"],
-                ["Products", "/products"],
-                ["Media", "/media"],
+                ["About us", "#about"],
+                ["Products", "#products"],
+                ["Project", "#project"],
+                ["Contact", "#contact"],
               ].map(([label, link]) => (
                 <li key={label}>
                   <Link

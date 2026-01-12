@@ -13,7 +13,10 @@ import Link from "next/link";
 
 const Contact = () => {
   return (
-    <section className="w-full bg-[#000] text-white py-10 px-4 relative overflow-hidden">
+    <section
+      id="contact"
+      className="w-full bg-[#000] text-white py-10 px-4 relative overflow-hidden"
+    >
       {/* Background Texture/Gradient Overlay (Optional subtle gradient to match depth) */}
       {/* <div className="absolute inset-0 bg-gradient-to-b from-[#164e9e] to-[#0d2650] opacity-90 pointer-events-none" /> */}
 
@@ -48,7 +51,7 @@ const Contact = () => {
         {/* --- BOTTOM INFO SECTION --- */}
         <div className="flex flex-col md:flex-row justify-center gap-8 md:gap-4 text-sm md:px-8">
           {/* Item 1: Call Us */}
-          <div className="flex items-center gap-4 min-w-[200px]">
+          {/* <div className="flex items-center gap-4 min-w-[200px]">
             <div className="p-2 border border-white/20 rounded-full">
               <Phone className="w-5 h-5" />
             </div>
@@ -57,13 +60,29 @@ const Contact = () => {
                 Call Us
               </p>
               <p className="font-bold text-base whitespace-nowrap">
-                +91 98765 43210
+                +91 9905275236
               </p>
             </div>
+          </div> */}
+          <div className="flex items-center gap-4 min-w-[200px] cursor-pointer">
+            <a href="tel:+919905275236" className="flex items-center gap-4">
+              <div className="p-2 border border-white/20 rounded-full">
+                <Phone className="w-5 h-5" />
+              </div>
+
+              <div className="border-r border-blue-400/30 pr-8 h-10 flex flex-col justify-center">
+                <p className="text-xs text-orange-500 uppercase tracking-wider font-semibold">
+                  Call Us
+                </p>
+                <p className="font-bold text-base whitespace-nowrap">
+                  +91 9905275236
+                </p>
+              </div>
+            </a>
           </div>
 
           {/* Item 2: Email Us */}
-          <div className="flex items-center gap-4 min-w-[250px]">
+          {/* <div className="flex items-center gap-4 min-w-[250px]">
             <div className="p-2 border border-white/20 rounded-full">
               <Mail className="w-5 h-5 text-white" />
             </div>
@@ -72,9 +91,28 @@ const Contact = () => {
                 Email Us
               </p>
               <p className="font-bold text-base whitespace-nowrap">
-                info@bulccementorder.com
+                tradecement61@gmail.com
               </p>
             </div>
+          </div> */}
+          <div className="flex items-center gap-4 min-w-[250px] cursor-pointer">
+            <a
+              href="mailto:tradecement61@gmail.com"
+              className="flex items-center gap-4"
+            >
+              <div className="p-2 border border-white/20 rounded-full">
+                <Mail className="w-5 h-5 text-white" />
+              </div>
+
+              <div className="border-r border-blue-400/30 pr-8 h-10 flex flex-col justify-center">
+                <p className="text-xs text-orange-500 uppercase tracking-wider font-semibold">
+                  Email Us
+                </p>
+                <p className="font-bold text-base whitespace-nowrap">
+                  tradecement61@gmail.com
+                </p>
+              </div>
+            </a>
           </div>
 
           {/* Item 3: Location */}

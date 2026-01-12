@@ -4,7 +4,10 @@ import { Play, Check } from "lucide-react";
 
 const AboutUsSection = () => {
   return (
-    <section className="relative py-16 md:py-24 bg-white overflow-hidden">
+    <section
+      id="about"
+      className="relative py-16 md:py-24 bg-white overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 ">
         <div className="flex flex-col lg:flex-row items-center gap-12">
           {/* --- Content Column --- */}
@@ -79,9 +82,11 @@ const AboutUsSection = () => {
                   </div>
                 </div>
 
-                <button className="px-6 py-2 cursor-pointer rounded text-white transition-all duration-300 hover:scale-105 hover:shadow-lg bg-gradient-to-r from-orange-500 to-red-600">
-                  Read More
-                </button>
+                <a href="tel:+919905275236">
+                  <button className="px-6 py-2 cursor-pointer rounded text-white transition-all duration-300 hover:scale-105 hover:shadow-lg bg-gradient-to-r from-orange-500 to-red-600">
+                    Read More
+                  </button>
+                </a>
               </div>
             </div>
           </div>
