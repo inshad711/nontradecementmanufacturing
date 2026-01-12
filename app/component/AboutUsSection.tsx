@@ -79,18 +79,7 @@ const AboutUsSection = () => {
                   </div>
                 </div>
 
-                {/* Theme Button Styled precisely like the HTML snippet */}
-                {/* <div className="flex-grow sm:flex-grow-0">
-                  <a
-                    href="#"
-                    className="relative inline-block px-10 py-4 bg-orange-600 text-white font-bold uppercase tracking-widest text-sm rounded-sm group overflow-hidden transition-all duration-300"
-                  >
-                    <span className="relative z-10">Read More</span>
-
-                    <span className="absolute top-0 left-0 w-0 h-full bg-black/10 transition-all duration-300 group-hover:w-full"></span>
-                  </a>
-                </div> */}
-                <button className="px-6 py-2 rounded text-white transition-all duration-300 hover:scale-105 hover:shadow-lg bg-gradient-to-r from-orange-500 to-red-600">
+                <button className="px-6 py-2 cursor-pointer rounded text-white transition-all duration-300 hover:scale-105 hover:shadow-lg bg-gradient-to-r from-orange-500 to-red-600">
                   Read More
                 </button>
               </div>
@@ -100,7 +89,6 @@ const AboutUsSection = () => {
           {/* --- Image/Video Column --- */}
           <div className="w-full lg:w-1/2 order-2 lg:order-1">
             <div className="relative group">
-              {/* Main Image Container */}
               <div className="relative rounded-lg overflow-hidden shadow-xl">
                 <img
                   src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=1000&auto=format&fit=crop"

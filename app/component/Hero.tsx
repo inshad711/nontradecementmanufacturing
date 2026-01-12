@@ -121,7 +121,7 @@ const Hero: React.FC = () => {
                 BULK CEMENT
               </h3>
 
-              <h2 className="text-2xl semibold md:text-4xl lg:text-5xl font-semibold leading-tight">
+              <h2 className="text-3xl semibold md:text-4xl lg:text-5xl font-semibold leading-tight">
                 Bulk Cement Supplies
                 <br />{" "}
                 <span className="font-medium">
@@ -133,7 +133,7 @@ const Hero: React.FC = () => {
                 </span>
               </h2>
 
-              <p className="text-xl text-gray-200 font-light max-w-md">
+              <p className="text-lg md:text-xl text-gray-200 font-light max-w-md">
                 Your trusted Cement Partner — Nationwide And Non Trade Cement
                 Bulk Order Online
               </p>

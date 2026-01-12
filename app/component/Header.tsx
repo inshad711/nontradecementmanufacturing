@@ -176,7 +176,7 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { Menu, X, Truck } from "lucide-react";
+import { Menu, X, Truck, TextAlignEnd } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const Header = () => {
@@ -286,7 +286,7 @@ const Header = () => {
                 Get a Quote
               </button> */}
               <button
-                className={`px-6 py-2 rounded text-white transition-all duration-300
+                className={`px-6 py-2 cursor-pointer rounded text-white transition-all duration-300
     hover:scale-105 hover:shadow-lg
     ${
       scrolled
@@ -303,7 +303,7 @@ const Header = () => {
               className={`md:hidden ${scrolled ? "text-black" : "text-white"}`}
               onClick={() => setIsMobileMenuOpen(true)}
             >
-              <Menu size={28} />
+              <TextAlignEnd size={28} />
             </button>
           </div>
         </div>
@@ -335,8 +335,25 @@ const Header = () => {
               onClick={(e) => e.stopPropagation()} // ⛔ prevent closing when clicking inside
             >
               {/* Header */}
-              <div className="flex justify-between items-center p-4 border-b">
+              {/* <div className="flex justify-between items-center p-4 border-b">
                 <p className="font-bold text-lg">Menu</p>
+                <button onClick={() => setIsMobileMenuOpen(false)}>
+                  <X size={26} />
+                </button>
+              </div> */}
+              <div className="flex justify-between items-center p-4 ">
+                {/* Logo */}
+                <div className="flex items-center gap-3">
+                  <Truck size={32} className="-scale-x-100 text-black" />
+                  <div>
+                    <p className="font-bold text-lg text-black">BULK CEMENT</p>
+                    <p className="text-xs tracking-widest text-gray-500">
+                      ORDER
+                    </p>
+                  </div>
+                </div>
+
+                {/* Close Button */}
                 <button onClick={() => setIsMobileMenuOpen(false)}>
                   <X size={26} />
                 </button>

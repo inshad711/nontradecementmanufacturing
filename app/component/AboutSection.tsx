@@ -98,7 +98,7 @@ import Button from "./FlowButton";
 
 const AboutSection = () => {
   return (
-    <section className="relative w-full pt-12 md:py-20">
+    <section className="relative w-full bg-[#fdfdfd] pt-12 md:py-20 md:mb-6">
       {/* Wrapper */}
       <div className="max-w-[1400px] mx-auto px-4 md:px-12 lg:px-14">
         {/* Responsive Layout */}
@@ -114,9 +114,9 @@ const AboutSection = () => {
             </h3>
 
             {/* Divider */}
-            <div className="w-24 h-1 bg-black mb-6 rounded-full"></div>
+            {/* <div className="w-24 h-1 bg-black mb-6 rounded-full"></div> */}
 
-            <div className=" leading-relaxed space-y-4 max-w-xl font-medium text-sm md:text-base  text-zinc-600">
+            <div className=" leading-relaxed space-y-4 md:max-w-xl font-medium text-sm md:text-base  text-zinc-600">
               <p>
                 We specialize in supplying bulk non-trade cement directly from
                 top manufacturers to your construction site. By eliminating
@@ -128,9 +128,9 @@ const AboutSection = () => {
 
           <div
             className="
-              mt-10 lg:mt-0
+              mt-10 lg:-mt-6
               lg:absolute lg:inset-0
-              h-full md:h-[300px] lg:h-[300px]
+              h-full md:h-[300px]
               z-0
             "
           >
